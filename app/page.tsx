@@ -608,7 +608,7 @@ function ContactForm() {
                   <Check className="w-8 h-8 text-[#2E7D5E]" />
                 </div>
                 <h3 className="text-xl font-bold text-[#0f1923] mb-2">Messaggio inviato!</h3>
-                <p className="text-gray-600">Ti risponderemo entro 24 ore. Nel frattempo puoi iniziare la prova gratuita.</p>
+                <p className="text-gray-600">Ti risponderemo entro 24 ore.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>

@@ -762,9 +762,97 @@ function Footer() {
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 
+const jsonLdOrganization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Kipy",
+  url: "https://www.kipyrentri.it",
+  email: "ciao@kipyrentri.it",
+  description:
+    "Kipy è il software RENTRI per PMI italiane: FIR precompilati in un click, firma digitale con FaceID, scanner xFIR automatico. 100% conforme al D.Lgs. 116/2020.",
+};
+
+const jsonLdSoftware = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Kipy",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "iOS, Android, Web",
+  offers: {
+    "@type": "Offer",
+    price: "149",
+    priceCurrency: "EUR",
+    priceValidUntil: "2026-12-31",
+    description: "Piano annuale tutto incluso, IVA inclusa",
+  },
+  description:
+    "Software RENTRI per la gestione semplificata di FIR e MUD. Firma digitale FaceID, scanner QR xFIR, aggiornamenti normativi automatici.",
+};
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Il RENTRI è obbligatorio per la mia azienda?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Se la tua impresa produce rifiuti speciali — oli esausti, rifiuti sanitari, solventi, metalli, carta e plastica industriale — sì, il RENTRI è obbligatorio. A partire dal 2024 l'obbligo si è esteso anche alle piccole imprese con meno di 10 dipendenti in molte categorie produttive. Kipy ti aiuta a scoprirlo in 2 minuti con il nostro verificatore gratuito.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Kipy è conforme alle normative vigenti?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sì. Kipy è sviluppato in costante collaborazione con esperti legali di diritto ambientale e segue il D.Lgs. 116/2020, il D.M. 4 agosto 2023 e le relative circolari MASE. Ogni aggiornamento normativo viene recepito automaticamente.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Posso usarlo da smartphone senza PC?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Assolutamente sì. Kipy è progettato mobile-first. Puoi compilare FIR, firmare con FaceID, scannerizzare QR code e inviare documenti direttamente dal tuo iPhone o Android. L'app è disponibile su App Store e Google Play.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Cosa succede dopo i 30 giorni di prova?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Al termine della prova gratuita puoi attivare il piano annuale a 149€. Se decidi di non continuare, i tuoi dati restano disponibili per l'esportazione per altri 90 giorni. Non addebitiamo nulla automaticamente: sei tu a decidere.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Come migro i dati dal portale ministeriale?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Kipy include uno strumento di importazione guidata che legge l'export CSV del portale RENTRI e carica tutto nel tuo account in pochi minuti. Il nostro team di supporto ti assiste gratuitamente durante la migrazione.",
+      },
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSoftware) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+
       {/* Skip link — WCAG 2.4.1 */}
       <a
         href="#main-content"

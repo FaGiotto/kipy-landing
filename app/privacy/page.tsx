@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.kipyrentri.it/privacy",
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const sections = [

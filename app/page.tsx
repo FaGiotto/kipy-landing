@@ -537,7 +537,7 @@ function FAQ() {
 // ─── CONTACT FORM ─────────────────────────────────────────────────────────────
 
 function ContactForm() {
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/mojnovaq";
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [form, setForm] = useState({ name: "", email: "", message: "Ciao, vorrei ricevere maggiori informazioni su Kipy e capire se fa al caso mio." });
 

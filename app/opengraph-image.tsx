@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const alt = "Kipy — RENTRI Facile. Zero scartoffie.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -25,6 +24,7 @@ export default function Image() {
         <div
           style={{
             display: "flex",
+            flexDirection: "row",
             alignItems: "center",
             gap: "16px",
             marginBottom: "48px",
@@ -51,44 +51,63 @@ export default function Image() {
         {/* Headline */}
         <div
           style={{
-            color: "white",
-            fontSize: "64px",
-            fontWeight: 800,
-            textAlign: "center",
-            lineHeight: 1.1,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
             marginBottom: "24px",
-            letterSpacing: "-2px",
           }}
         >
-          Il RENTRI diventa
-          <br />
-          <span style={{ color: "#6ec4a0" }}>finalmente facile.</span>
+          <span
+            style={{
+              color: "white",
+              fontSize: "64px",
+              fontWeight: 800,
+              textAlign: "center",
+              lineHeight: 1.1,
+              letterSpacing: "-2px",
+            }}
+          >
+            Il RENTRI diventa
+          </span>
+          <span
+            style={{
+              color: "#6ec4a0",
+              fontSize: "64px",
+              fontWeight: 800,
+              textAlign: "center",
+              lineHeight: 1.1,
+              letterSpacing: "-2px",
+            }}
+          >
+            finalmente facile.
+          </span>
         </div>
 
         {/* Subtext */}
-        <div
-          style={{
-            color: "rgba(255,255,255,0.7)",
-            fontSize: "28px",
-            textAlign: "center",
-            marginBottom: "48px",
-          }}
-        >
-          FIR in 1 click · Firma con FaceID · 149€/anno
+        <div style={{ display: "flex", marginBottom: "48px" }}>
+          <span
+            style={{
+              color: "rgba(255,255,255,0.7)",
+              fontSize: "28px",
+              textAlign: "center",
+            }}
+          >
+            FIR in 1 click · Firma con FaceID · 149€/anno
+          </span>
         </div>
 
         {/* Badge */}
         <div
           style={{
+            display: "flex",
             background: "#2E7D5E",
-            color: "white",
-            fontSize: "20px",
-            fontWeight: 600,
-            padding: "12px 28px",
             borderRadius: "100px",
+            padding: "12px 28px",
           }}
         >
-          100% conforme D.Lgs. 116/2020
+          <span style={{ color: "white", fontSize: "20px", fontWeight: 600 }}>
+            100% conforme D.Lgs. 116/2020
+          </span>
         </div>
       </div>
     ),
